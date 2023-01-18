@@ -85,3 +85,48 @@ test:
 production:
   <<: *default
   database: hellorails_production
+  
+# ******************************************************************************
+# ******************************************************************************
+  
+  # RESUME for SET UP PROJECTS
+
+# 1.- cmd
+# rails new Project --database=postgresql
+# cd Project
+# code .
+
+# 2.- Abrir el archivo
+# config/database.yml
+
+# Bajo la línea 23 en la sección default escribir
+# username: postgres
+# password: miContraseña
+# port: 4321
+
+# 3.- De vuelta al cmd
+# rails db:create
+# rails s
+
+# 4.- Browser
+# localhost:3000
+# [::1]:3000/
+# 127.0.0.1:3000
+
+# 5.- Gema dotenv-rails.
+
+# 5.1.- bundle add dotenv-rails
+# 5.2.- Crear archivo .env en el root
+# 5.3.- Ignorar .env en .gitignore
+
+# Ejemplo de línea en .env
+# PG_PASSWORD = YourPassword
+
+# Uso de variable desde .env en database.yml
+# password: <%= ENV['PG_PASSWORD']%>
+
+# 6.- Después de hacer migraciones
+# rails db:migrate
+
+# 7.- Si algo sale mal drop+create
+# rails db:reset
